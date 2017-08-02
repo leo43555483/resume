@@ -1,0 +1,30 @@
+#part-2 .intro .text-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+            
+        }
+
+#part-2 .intro ul.intro-text{
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 1.2em;
+    z-index: 99;
+         }
+#part-2 .intro ul.intro-text li {
+    display: flex;
+    width: 33.3333%;
+    justify-content: center;
+    cursor:pointer;
+}
+
+#part-2 .intro .text-wrap .information {
+    position: absolute;
+    top: 25px;
+    height: 200px;
+    width: 100%;
+}

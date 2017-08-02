@@ -1,0 +1,32 @@
+$.fn.function = jQuery.prototype 具有继承性；
+$.fn.Plugin = function(){
+    return this.each(function(){
+        //这里的this 指向下面调用此方法的DOM对象
+
+        let me = $(this),
+        instance = me.data("method")//读取此方法
+        if(!instance){
+            //如果此方法不存在则创建一个方法
+
+            me.data('method',(instance = new plugin(me,options))); //
+        }
+    })
+}
+-------------------------------------------------------------------
+ const thisObj = $(this);
+            let plugin = thisObj.data("PageSwitch");
+            if (!plugin) {
+                 thisObj.data("PageSwitch",(plugin = new PageSwitch(thisObj,options)));
+            }
+            if($.type(options) === "string"){
+                  return plugin[options]();         
+            }
+
+        })
+        //注意插件应该先声明后再引入
+        (function($){
+            $("[data-name]").pageSwitch();
+
+        })(jQuery)
+
+        并且要注意对象原型prototype应该写在构造函数new pageSwitch之前 以免再prototype重写时造成混乱。

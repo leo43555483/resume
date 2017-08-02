@@ -1,0 +1,251 @@
+ *{
+            padding: 0;
+            margin: 0;
+        }
+        html{
+            height: 100%;
+        }
+
+        body{
+            font-family: Arial, "Microsoft YaHei";
+            height: 100%;
+            /* overflow: hidden; */
+        }
+
+        .contanier,.selection,.section{
+            position: relative;
+
+            height: 100%;
+        }
+        #part-1,#part-2,
+        #part-3,#part-4{
+            background-size: cover;
+            background-position: 50% 50%;
+            background-color: #000;
+        }
+
+        #part-1{
+            background-image: url(images/pic.jpg);
+            color: #fff;
+            text-shadow: 1px 1px 1px #333;
+        }
+        #part-2{
+            background-image: url(images/2.jpg);
+            text-shadow: 1px 1px 1px #333;
+            color: #fff;
+        }
+         
+          #part-2 .part2-intro{
+            width: 40%;
+            height: 40%;
+          }
+        
+        #part-3{
+            background-image: url(images/3.jpg);
+            text-shadow: 1px 1px 1px #333;
+            color: #fff;
+        }
+        #part-4{
+            background-image: url(images/4.jpg);
+            text-shadow: 1px 1px 1px #fff;
+            color: #008283;
+        }
+
+        .intro{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            -webkit-transform: translate(-50%,-50%);
+            text-align: center;         
+        }
+        
+        #part-1 .intro {
+            font-size: 1em;
+            color: #FFF;
+            padding: .5em 0 2em;
+            z-index: 10001;
+        }
+
+        #part-1 .intro .headpic{
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            background: #fff;
+            border: 2px solid rgb(228, 187, 69);
+            border-radius: 50%;
+            vertical-align: middle;
+
+        }
+
+        #part-1 .intro .headpic{
+            opacity: 0;
+            -webkit-animation: hp1 800ms ease-in 400ms forwards;
+            animation: hp1 800ms ease-in 400ms forwards;
+        }
+        
+        @-webkit-keyframes hp1{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+        @keyframes hp1{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+
+        #part-1 .intro .intro-content{
+            display: inline-block;
+            margin: 20px 0 0 0;
+            vertical-align: middle;
+            
+        }
+
+        #part-1 .intro .intro-content p {
+           font-size: 1em;
+           color:rgb(255, 255, 255);
+           text-shadow: 1px 1px 1px #000;
+        }
+
+        #part-1 .intro .intro-content p{
+            opacity: 0;
+            -moz-transform : translateX(-100%);
+            -webkit-transform : translateX(-100%);
+            transform: translateX(-100%);
+            -webkit-animation : contentp 800ms ease-in-out 1s forwards;
+            animation: contentp 800ms ease-in-out 1s forwards;
+        }
+
+        #part-1 .guidance{
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            -webkit-transform : translateX(-50%);
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+
+
+        #part-1 .guidance .arrow  {
+            display: block;
+            height:18px;
+            width: 32px;
+            margin: 0 auto 10px;
+            background: url(./images/down.png) no-repeat center;
+            cursor: pointer;
+        }
+
+        #part-1 .guidance .arrow  {
+            opacity: 0;
+            -webkit-animation: hp1 800ms ease-in 400ms forwards;
+            animation: hp1 800ms ease-in 1200ms forwards;
+        }
+        
+
+        @-webkit-keyframes contentp{
+            0%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+       @keyframes contentp{
+            0%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        #part-1 .intro .intro-content h1 {
+            color: rgb(229, 188, 70);
+        }
+
+        #part-1 .intro .intro-content h1{
+            opacity: 0;
+            -webkit-transform:translateX(100%);
+            -moz-transform : translateX(100%);
+            transform:translateX(100%);
+            -webkit-animation:contenth 800ms ease-in-out 1s forwards;
+        }
+
+        @-webkit-keyframes contenth{
+            0%{
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes contenth{
+            0%{
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+         .mask {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background:#000;
+            opacity: .6;
+        
+            
+        }
+         #part-4 .intro p{
+            font-size: 2em;
+            color: #00A3AF;
+            padding: .5em 0 2em
+         }
+
+        .pages {
+            position: fixed;
+            list-style: none;
+
+         }
+
+        .pages li {
+            margin: 10px 5px;
+            height: 8px;
+            width: 8px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+         }
+        /*active单独写为全局类，其属性值在Li属性值之后，所以要把.active 写入到Li下*/
+        .pages li.active {
+            height: 14px;
+            width: 14px;
+            margin-left: 0;
+            background: none;
+            border: 2px solid #FFFE00;
+        }
+
+        .vertical {
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
