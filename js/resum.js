@@ -84,7 +84,7 @@ define(['jquery'],function(){
                 me.elements.on("mousewheel DDOMMouseScroll",function(e){
                     e.preventDefault();
                     let wheelDir = e.originalEvent.wheelDelta || -e.originalEvent.detail;
-                    console.log(me.canscroll);
+                    
                     if(me.canscroll){
                         if(wheelDir < 0 && (me.index < (me.pageCount-1) && !me.setting.loop || me.setting.loop)){
                             //(me.index < (me.pageCount-1) && !me.setting.loop )||me.setting.loop
@@ -98,14 +98,15 @@ define(['jquery'],function(){
                 //点击事件
                 me.elements.on("click",function(e){
                     try{
-                        if (e.target && e.target.nodeName == "LI") {
-                            me.index = $(e.target).index();
+                        let target = e.target;
+                        if (target && target.parentNode.className === "pages vertical") {
+                            me.index = $(target).index();
                             me.scrollPage();
-                        } else if(e.target && e.target.id == "nextpage") {
+                        } else if(target && target.id == "nextpage") {
                             me.next();
                         } 
                     }catch(err){
-                        console.log(err);
+                        console.log(target.parentNode.className);
                     }     
                 });
 
@@ -132,7 +133,7 @@ define(['jquery'],function(){
                 //窗口改变事件
                 let resieWindow;
                 $(window).resize(function(){
-                    console.log(0)
+                   
                     clearTimeout(resieWindow);
                     resieWindow = setTimeout(function(){
                         let currL = me.elementsHeight();
@@ -203,7 +204,7 @@ define(['jquery'],function(){
     $.fn.PageSwitch = function(options){
         return this.each(function (){
             // body...
-            const thisObj = $(this);
+            let thisObj = $(this);
             let plugin = thisObj.data("PageSwitch");
             if (!plugin) {
                  thisObj.data("PageSwitch",(plugin = new PagePlugin(thisObj,options)));

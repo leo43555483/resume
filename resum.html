@@ -4,32 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./resum.css">
     <link rel="stylesheet" type="text/css" href="./tab.css">
-    <script type="text/javascript">
-        window.onload = function(){
-            let ul = document.getElementById("introduce"),
-                divList = ul.getElementsByTagName("div"),
-                liList = ul.getElementsByTagName("li");
-                ul.addEventListener("click",callback);
-                function callback(e){
-                    let target = e.target;
-                    if(target.nodeName === "li")
-                }
-            
-        }
-    </script>
     <script data-main="js/main.js" src="js/lib/require.js"></script>
     <title>周宏亮的简历</title>
 </head>
 <body>
     <div class="contanier" data-PageSwitch>
-   <!-- <div class="nav">
-        <div class="nav-wrap">
-            <div class="myname"><h2>周宏亮</h2></div>
-            <div class="link">
-                <ul></ul>
-            </div>
-        </div>
-    </div>-->
         <div class="selection">
             <div class="section" id="part-1">
                 <div class="mask"></div>
@@ -50,17 +29,17 @@
                 </div>
             </div>
             <div class="section" id="part-2">
-                <div class="intro part2-intro">
+                <div class="intro part2-intro" >
                 <div class="mask"></div>
-                <div id="introduce" class="text-wrap">
-                   <ul class="intro-text">
+                <div id="introduce" class="text-wrap" data-tab>
+                   <ul class="intro-text" >
                         <li>关于我</li>
                         <li>技术栈</li>
                         <li>联系我</li>
                     </ul>
-                    <div class="information"></div>
-                    <div class="information"></div>
-                    <div class="information"></div>
+                    <div class="information" style="display: block;">1</div>
+                    <div class="information">2</div>
+                    <div class="information">3</div>
                 </div>    
                 </div>
             </div>
@@ -80,7 +59,8 @@
         </div>
         
     </div>
-    <script type="text/javascript">
+    <script data-main="js/main.js" src="js/lib/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript"> 
     </script>
 </body>
 </html>
